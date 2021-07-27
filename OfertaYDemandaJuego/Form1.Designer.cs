@@ -29,19 +29,20 @@ namespace OfertaYDemandaJuego
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.buttonNextIter = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.labelPan = new System.Windows.Forms.Label();
-            this.labelFruta = new System.Windows.Forms.Label();
-            this.labelCerveza = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.labelMoney = new System.Windows.Forms.Label();
+            this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.labelCityName = new System.Windows.Forms.Label();
+            this.buttonPrevCity = new System.Windows.Forms.Button();
+            this.buttonNextCity = new System.Windows.Forms.Button();
+            ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // buttonNextIter
             // 
+            this.buttonNextIter.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.buttonNextIter.Location = new System.Drawing.Point(680, 12);
             this.buttonNextIter.Name = "buttonNextIter";
             this.buttonNextIter.Size = new System.Drawing.Size(97, 23);
@@ -50,95 +51,63 @@ namespace OfertaYDemandaJuego
             this.buttonNextIter.UseVisualStyleBackColor = true;
             this.buttonNextIter.Click += new System.EventHandler(this.buttonNextIter_Click);
             // 
-            // label1
+            // dataGridView1
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(12, 16);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(30, 15);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "Pan:";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
+            this.dataGridView1.AllowUserToAddRows = false;
+            this.dataGridView1.AllowUserToDeleteRows = false;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(12, 71);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.ReadOnly = true;
+            this.dataGridView1.RowTemplate.Height = 25;
+            this.dataGridView1.Size = new System.Drawing.Size(440, 414);
+            this.dataGridView1.TabIndex = 9;
             // 
-            // label2
+            // labelCityName
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(12, 53);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(37, 15);
-            this.label2.TabIndex = 2;
-            this.label2.Text = "Fruta:";
+            this.labelCityName.AutoSize = true;
+            this.labelCityName.Location = new System.Drawing.Point(213, 53);
+            this.labelCityName.Name = "labelCityName";
+            this.labelCityName.Size = new System.Drawing.Size(38, 15);
+            this.labelCityName.TabIndex = 10;
+            this.labelCityName.Text = "label1";
             // 
-            // label3
+            // buttonPrevCity
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(12, 92);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(51, 15);
-            this.label3.TabIndex = 3;
-            this.label3.Text = "Cerveza:";
+            this.buttonPrevCity.Location = new System.Drawing.Point(12, 42);
+            this.buttonPrevCity.Name = "buttonPrevCity";
+            this.buttonPrevCity.Size = new System.Drawing.Size(28, 23);
+            this.buttonPrevCity.TabIndex = 11;
+            this.buttonPrevCity.Text = "<";
+            this.buttonPrevCity.UseVisualStyleBackColor = true;
+            this.buttonPrevCity.Click += new System.EventHandler(this.buttonPrevCity_Click);
             // 
-            // labelPan
+            // buttonNextCity
             // 
-            this.labelPan.AutoSize = true;
-            this.labelPan.Location = new System.Drawing.Point(49, 16);
-            this.labelPan.Name = "labelPan";
-            this.labelPan.Size = new System.Drawing.Size(38, 15);
-            this.labelPan.TabIndex = 4;
-            this.labelPan.Text = "label4";
-            // 
-            // labelFruta
-            // 
-            this.labelFruta.AutoSize = true;
-            this.labelFruta.Location = new System.Drawing.Point(56, 52);
-            this.labelFruta.Name = "labelFruta";
-            this.labelFruta.Size = new System.Drawing.Size(38, 15);
-            this.labelFruta.TabIndex = 5;
-            this.labelFruta.Text = "label5";
-            // 
-            // labelCerveza
-            // 
-            this.labelCerveza.AutoSize = true;
-            this.labelCerveza.Location = new System.Drawing.Point(70, 91);
-            this.labelCerveza.Name = "labelCerveza";
-            this.labelCerveza.Size = new System.Drawing.Size(38, 15);
-            this.labelCerveza.TabIndex = 6;
-            this.labelCerveza.Text = "label6";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(408, 76);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(77, 15);
-            this.label4.TabIndex = 7;
-            this.label4.Text = "Ciudadano 1:";
-            // 
-            // labelMoney
-            // 
-            this.labelMoney.AutoSize = true;
-            this.labelMoney.Location = new System.Drawing.Point(491, 76);
-            this.labelMoney.Name = "labelMoney";
-            this.labelMoney.Size = new System.Drawing.Size(38, 15);
-            this.labelMoney.TabIndex = 8;
-            this.labelMoney.Text = "label5";
+            this.buttonNextCity.Location = new System.Drawing.Point(424, 42);
+            this.buttonNextCity.Name = "buttonNextCity";
+            this.buttonNextCity.Size = new System.Drawing.Size(28, 23);
+            this.buttonNextCity.TabIndex = 12;
+            this.buttonNextCity.Text = ">";
+            this.buttonNextCity.UseVisualStyleBackColor = true;
+            this.buttonNextCity.Click += new System.EventHandler(this.buttonNextCity_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(789, 454);
-            this.Controls.Add(this.labelMoney);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.labelCerveza);
-            this.Controls.Add(this.labelFruta);
-            this.Controls.Add(this.labelPan);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
+            this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.ClientSize = new System.Drawing.Size(789, 497);
+            this.Controls.Add(this.buttonNextCity);
+            this.Controls.Add(this.buttonPrevCity);
+            this.Controls.Add(this.labelCityName);
             this.Controls.Add(this.buttonNextIter);
+            this.Controls.Add(this.dataGridView1);
             this.Name = "Form1";
             this.Text = "Pan";
+            this.Load += new System.EventHandler(this.Form1_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -147,14 +116,11 @@ namespace OfertaYDemandaJuego
         #endregion
 
         private System.Windows.Forms.Button buttonNextIter;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label labelPan;
-        private System.Windows.Forms.Label labelFruta;
-        private System.Windows.Forms.Label labelCerveza;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label labelMoney;
+        private System.Windows.Forms.BindingSource bindingSource1;
+        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.Label labelCityName;
+        private System.Windows.Forms.Button buttonPrevCity;
+        private System.Windows.Forms.Button buttonNextCity;
     }
 }
 
