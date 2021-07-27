@@ -9,6 +9,9 @@ namespace OfertaYDemandaJuego.Classes
 #region PROPERTIES
 
         public float Salary { get; set; }
+
+        public City City { get; set; }
+
         public float Money
         {
             get
@@ -25,8 +28,11 @@ namespace OfertaYDemandaJuego.Classes
         private float _money;
 #endregion
 
-        public Citizen()
+        public Citizen(City city)
         {
+
+            City = city;
+
             _rnd = new Random();
 
             GenerateSocialStatus();
@@ -75,17 +81,17 @@ namespace OfertaYDemandaJuego.Classes
             // A citizen consumes 60% of all possible staple food every day.
             HashSet<int> dailyStapleFood = new HashSet<int>();
 
-            while(dailyStapleFood.Count < Stock.StappleFood.Count * 0.6)
+            while(dailyStapleFood.Count < City.Stock.StappleFood.Count * 0.6)
             {
-                dailyStapleFood.Add(Stock.StappleFood.IndexOf(Stock.StappleFood[_rnd.Next(0, Stock.StappleFood.Count)] ));
+                dailyStapleFood.Add(City.Stock.StappleFood.IndexOf(City.Stock.StappleFood[_rnd.Next(0, City.Stock.StappleFood.Count)] ));
             }
 
             foreach(int i in dailyStapleFood)
             {
-                if (_money >= Stock.StappleFood[i].Price && Stock.StappleFood[i].Stock > 0)
+                if (_money >= City.Stock.StappleFood[i].Price && City.Stock.StappleFood[i].Stock > 0)
                 {
-                    Stock.StappleFood[i].Stock--;
-                    _money -= Stock.StappleFood[i].Price;
+                    City.Stock.StappleFood[i].Stock--;
+                    _money -= City.Stock.StappleFood[i].Price;
                 }
             }
 

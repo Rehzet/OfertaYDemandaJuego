@@ -4,11 +4,11 @@ using System.Text;
 
 namespace OfertaYDemandaJuego.Classes
 {
-    static class Stock
+     class Stock
     {
-        public static List<Product> StappleFood { get; set; }
+        public  List<Product> StappleFood { get; set; }
 
-        static Stock()
+        public Stock()
         {
             StappleFood = new List<Product>();
         }

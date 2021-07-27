@@ -8,34 +8,19 @@ namespace OfertaYDemandaJuego
     public partial class Form1 : Form
     {
 
-        private List<Classes.Citizen> _citizens;
+        private List<Classes.City> _cities;
+        
 
         public Form1()
         {
             InitializeComponent();
-
-            SetProducts();
-
-            _citizens = new List<Classes.Citizen>();
-            SetCitizens();
+            
+            createCities();
         }
 
         private void Form1_Load(object sender, EventArgs e)
         {
             
-        }
-
-        private void SetProducts()
-        {
-            Classes.Stock.StappleFood.Add(new Classes.Product("Pan", 1f, Classes.Constants.CAT_STAPLE_FOOD, 200));
-            Classes.Stock.StappleFood.Add(new Classes.Product("Fruta", 1.5f, Classes.Constants.CAT_STAPLE_FOOD, 500));
-            Classes.Stock.StappleFood.Add(new Classes.Product("Cerveza", 1.8f, Classes.Constants.CAT_STAPLE_FOOD, 300));
-
-        }
-
-        private void SetCitizens()
-        {
-            _citizens.Add(new Classes.Citizen());
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -45,16 +30,34 @@ namespace OfertaYDemandaJuego
 
         private void buttonNextIter_Click(object sender, EventArgs e)
         {
-            foreach(Classes.Citizen c in _citizens)
+            simulateDay();
+        }
+
+        private void createCities()
+        {
+            _cities = new List<Classes.City>();
+
+            _cities.Add(new Classes.City("Madrid"));
+
+        }
+
+        private void simulateDay()
+        {
+
+            foreach (Classes.City city in _cities)
             {
-                c.ConsumeProducts();
+                foreach (Classes.Citizen citizen in _cities[0].Citizens)
+                {
+                    citizen.ConsumeProducts();
+                }
+
+                labelPan.Text = city.Stock.StappleFood[0].Stock.ToString();
+                labelFruta.Text = city.Stock.StappleFood[1].Stock.ToString();
+                labelCerveza.Text = city.Stock.StappleFood[2].Stock.ToString();
+
+                labelMoney.Text = city.Citizens[0].Money.ToString() + "€";
             }
 
-            labelPan.Text = Classes.Stock.StappleFood[0].Stock.ToString();
-            labelFruta.Text = Classes.Stock.StappleFood[1].Stock.ToString();
-            labelCerveza.Text = Classes.Stock.StappleFood[2].Stock.ToString();
-
-            labelMoney.Text = _citizens[0].Money.ToString() + "€";
         }
     }
 }
